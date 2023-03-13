@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        :root {
+            --color-1: #fff;
+            --color-2: #000;
+            --color-3: gray;
+            --color-4: rgba(128, 128, 128, 0.1);
+            --color-5: rgb(90, 90, 90);
+            --color-6: rgb(62, 62, 206);
+            --color-7: rgb(255, 99, 64);
+        }
+
+        body {
+            background-color: var(--color-1);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            max-width: 21cm;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        h4 {
+            color: 1.6rem;
+            color: var(--color-3);
+        }
+
+        h3 {
+            background: var(--color-5);
+            padding: 1rem;
+            color: var(--color-1);
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        span {
+            color: var(--color-2);
+        }
+
+        hr {
+            background: var(--color-4);
+            height: .1rem;
+            border: none;
+            margin: 1rem 0;
+        }
+
+        a {
+            color: var(--color-6);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        a[type="email"] {
+            color: var(--color-2);
+            font-weight: 400;
+        }
+
+        .col-2 {
+            /* columns: 2; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: .5rem;
+            padding: 0.5rem 0;
+        }
+
+        .col-4 {
+            /* columns: 2; */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .col-2 p {
+            color: var(--color-2);
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .col-2 span {
+            color: var(--color-3);
+            text-transform: capitalize;
+        }
+
+
+        /* ---------- */
+
+        header {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        header .img-container img {
+            width: 38mm;
+            height: 100%;
+            padding: 2rem;
+            background-color: #FFF;
+            /* 
+    margin-bottom: -2mm;
+    margin-left: 13mm;
+    margin-top: 1mm; */
+        }
+
+        header .line {
+            position: absolute;
+            left: 0;
+            top: 3rem;
+            background-color: var(--color-7);
+            height: 2rem;
+            width: 100%;
+            z-index: -1;
+        }
+
+        /* .container {
+    width: 21cm;
+    height: 29.7cm;
+    position: relative;
+    margin: 0 auto;
+} */
+
+        .bar-code-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+        }
+
+
+        .information-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .information-container .content,
+        .information-container .status {
+            border: .1rem solid var(--color-4);
+            padding: 1rem;
+        }
+
+        .information-container .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .information-container .content .id-client {
+            display: flex;
+            justify-content: space-between;
+            font-size: inherit;
+        }
+
+        .information-container h4 {
+            color: var(--color-2);
+            font-size: inherit;
+        }
+
+        .information-container .contact-hr {
+            position: relative;
+        }
+
+        .information-container .contact-hr span {
+            color: var(--color-3);
+            background-color: var(--color-1);
+            padding-right: .5rem;
+            font-size: 1.2rem;
+        }
+
+        .information-container .contact-hr div {
+            height: .2rem;
+            width: 100%;
+            background-color: var(--color-4);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .information-container .status {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(245, 245, 245);
+        }
+
+        .information-container .status span,
+        .information-container .content span {
+            color: var(--color-3)
+        }
+
+        .driver-endorsement {
+            margin-top: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .driver-endorsement p {
+            line-height: 1.8rem;
+            font-size: 1.2rem;
+        }
+
+        .driver-endorsement p span {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        footer {
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+        }
+
+        .footer-line {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .footer-line div {
+            border-top: .5rem solid var(--color-7);
+            height: 1rem;
+        }
+
+        .footer-line div:nth-child(2) {
+            margin-left: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-line div:nth-child(5) {
+            height: 1.55rem;
+            width: 99%;
+            background-color: var(--color-1);
+            position: absolute;
+            top: 15%;
+            z-index: 1;
+            border: none;
+        }
+
+        .footer-line div:nth-child(3) {
+            margin-left: 2rem;
+        }
+
+        .footer-line div:nth-child(4) {
+            position: absolute;
+            top: 0;
+            right: -1rem;
+            transform: translateY(-20%);
+            height: 125%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: .5rem solid var(--color-7);
+            background-color: var(--color-1);
+            z-index: 1;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="body" class="container">
+    <header>
+        <div class="img-container wrapper">
+            <img src="https://admin.madar.app/assets/images/madar-logo.svg" alt="madar logo">
+        </div>
+        <div class="line"></div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="bar-code-container">
+                <!-- {{#if data.assigningDateTz}} -->
+                <h4>
+                    Assigning Date: <span class="value">{{prettifyDate data.assigningDateTz}}</span>
+                </h4>
+                <!-- {{/if}} -->
+
+                <!-- {{#if data.loadingDateTz}}
+                    <h4>
+                        Loading Date: <span class="value">{{prettifyDate data.loadingDateTz}}</span>
+                    </h4>
+                {{/if}} -->
+
+                <div class="barcode">
+                    <!-- <img src="{{data.requestNumberBarcode}}" width="150mm" height="25mm" style="margin-top: 4.5mm;"> -->
+                    <img src="{{data.requestNumberBarcode}}" alt="Barcode">
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="col-2">
+                <div class="information-container shipper">
+                    <h3>Shipper information</h3>
+                    <div class="content">
+                        <div class="id-client">
+                            <h4>{{data.customer.title}}</h4>
+                            <span>{{data.customer.crNumber}}</span>
+                        </div>
+                        <p class="email">{{data.customer.email}}</p>
+                        <p>{{data.pickUpLocation.title}}</p>
+                        <div class="contact-hr">
+                            <span>Contact Person</span>
+                            <div></div>
+                        </div>
+                        <p>{{data.customer.contactFirstName}} {{data.customer.contactLastName}}</p>
+                        <div class="col-2">
+                            <span>{{data.customer.contactMobileNumber}}</span>
+                            <span>{{data.pickUpLocation.address}}</span>
+                        </div>
+                    </div>
+
+                    <div class="status">
+                        <span>From</span>
+                        <p>{{data.pickUpLocation.city.name}}</p>
+                        <span>{{prettifyDate this}}</span>
+
+                        <!-- <div>
+                                {{#data.history}}
+                                {{#isEqualList action 'GOODS_LOADED' createdAt}}
+                                
+                                {{/isEqualList}}
+                                {{/data.history}}
+                            </div> -->
+                    </div>
+                </div>
+
+                <div class="information-container receiver">
+                    <h3>Receiver Information</h3>
+
+                    <div class="content">
+                        <div class="id-client">
+                            <p>{{data.receiver.name}}</p>
+                            <span>{{data.receiver.crNumber}}</span>
+                        </div>
+                        <p class="email">{{data.contactPerson.email}}</p>
+                        <p>{{data.dropOffLocation.title}}</p>
+                        <div class="contact-hr">
+                            <span>Contact Person</span>
+                            <div></div>
+                        </div>
+                        <p>{{data.contactPerson.name}}</p>
+                        <div class="col-2">
+                            <span>{{data.contactPerson.mobileNumber}}</span>
+                            <span>{{data.dropOffLocation.address}}</span>
+                        </div>
+                    </div>
+
+                    <div class="status">
+                        <span>To</span>
+                        <p>{{data.dropOffLocation.city.name}}</p>
+                        <span>{{prettifyDate this}}</span>
+
+                        <!-- <div>
+                                {{#data.history}}
+                                {{#isEqualList action 'GOODS_DELIVERED' createdAt}}
+                                {{/isEqualList}}
+                                {{/data.history}}
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="ship-info">
+                <h3>Shipment information</h3>
+                <div class="col-2">
+                    <div class="col-2">
+                        <span>Product Type:</span>
+                        <p>{{data.productType.name}}</p>
+                    </div>
+
+                    <div class="col-2">
+                        <span>Description:</span>
+                        <p>{{data.notes}}</p>
+                    </div>
+
+                    <div class="col-2">
+                        <span>Required truck:</span>
+                        <p>{{data.truckType.name}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="transp-info">
+                <h3>Transporter information</h3>
+                <div class="col-2">
+                    <div>
+                        <h4>Truck Info</h4>
+                        <div class="col-2">
+                            <span>Plate Number:</span>
+                            <p>{{data.truck.plateNumber}}</p>
+                        </div>
+                        <div class="col-2">
+                            <span>Truck Type:</span>
+                            <p>{{data.truck.type.name}}</p>
+                        </div>
+                        <!-- <div class="col-2">
+                            <p>Truck Serial Number:</p>
+                            <p>{{data.truck.sequenceNumber}}</p>
+                        </div> -->
+                    </div>
+
+
+                    <div>
+                        <h4>Driver Info</h4>
+                        <div class="col-2">
+                            <span>Driver Name:</span>
+                            <p>{{data.driver.user.firstName}} {{data.driver.user.lastName}}</p>
+                        </div>
+                        <div class="col-2">
+                            <span>Iqama/National ID:</span>
+                            <p>{{data.driver.iqamaId}}</p>
+                        </div>
+                        <div class="col-2">
+                            <span>Nationality:</span>
+                            <p>{{data.driver.nationality}}</p>
+                        </div>
+                        <div class="col-2">
+                            <span>Mobile Number:</span>
+                            <p>{{data.driver.user.mobileNumber}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="driver-endorsement">
+                <p>
+                    I, <span>{{data.driver.user.firstName}}</span> <span>{{data.driver.user.lastName}}</span>, the
+                    driver of the car whose numbers are
+                    mentioned above, undertake and commit myself to
+                    be personally responsible for the goods loaded upon receiving them, intact and complete in number
+                    and
+                    quality,
+                    in order to deliver them to their destination without delay, and that I bear the consequences of the
+                    goods in
+                    terms of fines and expenses for damage, shortage or delay resulting from my negligence as I commit
+                    to
+                    setting
+                    sail And store the goods and notify the Foundation's office in the event of any emergency during the
+                    same day.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrapper">
+            <div class="footer-line">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <h2>Madar Digital Logistics Solution Co.</h2>
+            <a href="https://www.madar.app/" target="_blank">www.madar.app</a>
+
+            <div class="col-4">
+                <div>
+                    <a href="customerservice@madar.app" type="email">CustomerService@madar.app</a>
+                    <p>Kingdom of Saudi Arabia,<br> P.O. Box 1087, Riyadh 11431</p>
+                </div>
+                <p>VAT: 310573362100003 </p>
+                <p>Tel: 920002341 - 5555</p>
+                <p>CR : 1010586820</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
