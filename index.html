@@ -79,7 +79,7 @@
             }
 
             .col-4 {
-                /* columns: 2; */
+                /* columns: 4; */
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 1rem;
@@ -96,23 +96,16 @@
                 text-transform: capitalize;
             }
 
-
-            /* ---------- */
-
             header {
-                margin-top: 4rem;
+                margin-top: 2rem;
                 position: relative;
             }
 
             header .img-container img {
-                /* width: 38mm; */
                 width: 20rem;
                 height: 100%;
                 padding: 2rem;
                 background-color: var(--bg-1);
-                /* margin-bottom: -2mm;
-                margin-left: 13mm;
-                margin-top: 1mm; */
             }
 
             header .line {
@@ -125,17 +118,14 @@
                 z-index: -1;
             }
 
-            /* .container {
-        width: 21cm;
-        height: 29.7cm;
-        position: relative;
-        margin: 0 auto;
-    } */
-
             .bar-code-container {
                 display: flex;
                 justify-content: space-between;
                 margin: 1rem 0;
+            }
+
+            .bar-code-container span {
+                color: var(--secondary-text);
             }
 
             .barcode {
@@ -219,7 +209,7 @@
             .information-container .status {
                 display: flex;
                 justify-content: space-around;
-                background-color: rgb(245, 245, 245);
+                background-color: var(--border);
             }
 
             .information-container .status span,
@@ -228,8 +218,8 @@
             }
 
             .driver-endorsement {
-                margin-top: 4rem;
-                margin-bottom: 6rem;
+                margin-top: 3rem;
+                margin-bottom: 3rem;
             }
 
             .driver-endorsement p {
@@ -243,13 +233,13 @@
             }
 
             footer {
-                padding-top: 3rem;
-                padding-bottom: 3rem;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
             }
 
             .footer-line {
                 position: relative;
-                margin-bottom: 2rem;
+                margin: 0 1rem 2rem 0;
                 padding: 0 1rem;
             }
 
@@ -312,14 +302,12 @@
             <div class="wrapper">
                 <div class="bar-code-container">
                     <!-- {{#if data.assigningDateTz}} -->
-                    <h4>
-                        Assigning Date: <span class="value">{{prettifyDate data.assigningDateTz}}</span>
-                    </h4>
+                    <p><span>Assigning Date:</span>{{prettifyDate data.assigningDateTz}}</p>
                     <!-- {{/if}} -->
 
                     <!-- {{#if data.loadingDateTz}}
                         <h4>
-                            Loading Date: <span class="value">{{prettifyDate data.loadingDateTz}}</span>
+                            Loading Date: <spa">{{prettifyDate data.loadingDateTz}}</span>
                         </h4>
                     {{/if}} -->
 
