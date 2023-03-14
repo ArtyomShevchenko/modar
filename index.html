@@ -281,6 +281,12 @@
             background-color: var(--bg-1);
             z-index: 1;
         }
+
+        svg {
+            height: 1.2rem;
+            fill: var(--color-1);
+            padding-right: .5rem;
+        }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,8 +321,8 @@
                     <!-- insert your custom barcode setting your data in the GET parameter "data" -->
                     <img alt='Barcode Generator TEC-IT'
                         src='https://barcode.tec-it.com/barcode.ashx?data={{data.requestNumberBarcode}}&code=&translate-esc=true&unit=Fit' />
-                        <!-- {{data.requestNumberBarcode}} -->
-                    </div>
+                    <!-- {{data.requestNumberBarcode}} -->
+                </div>
 
             </div>
 
@@ -330,8 +336,18 @@
                             <h4>{{data.customer.title}}</h4>
                             <span>{{data.customer.crNumber}}</span>
                         </div>
-                        <p class="email">{{data.customer.email}}</p>
-                        <p>{{data.pickUpLocation.title}}</p>
+                        <p class="email"><svg viewBox="0 0 24 24">
+                                <g>
+                                    <path d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z" />
+                                </g>
+                            </svg>{{data.customer.email}}</p>
+                        <p> <svg viewBox="0 0 395.71 395.71">
+                                <g>
+                                    <path
+                                        d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+                                </g>
+                            </svg>
+                            {{data.pickUpLocation.title}}</p>
                         <div class="contact-hr">
                             <span>Contact Person</span>
                             <div></div>
@@ -366,8 +382,19 @@
                             <p>{{data.receiver.name}}</p>
                             <span>{{data.receiver.crNumber}}</span>
                         </div>
-                        <p class="email">{{data.contactPerson.email}}</p>
-                        <p>{{data.dropOffLocation.title}}</p>
+                        <p class="email"><svg viewBox="0 0 24 24">
+                                <!--  viewBox="0 0 24 24" -->
+                                <g>
+                                    <path d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z" />
+                                </g>
+                            </svg>{{data.contactPerson.email}}</p>
+                        <p> <svg viewBox="0 0 395.71 395.71">
+                                <g>
+                                    <path
+                                        d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+                                </g>
+                            </svg>
+                            {{data.dropOffLocation.title}}</p>
                         <div class="contact-hr">
                             <span>Contact Person</span>
                             <div></div>
