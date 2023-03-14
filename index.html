@@ -182,7 +182,16 @@
 
         .information-container h4 {
             color: var(--main-text);
-            font-size: inherit;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .information-container p {
+            font-weight: 400;
+        }
+
+        .information-container .name {
+            font-weight: 700;
         }
 
         .information-container .contact-hr {
@@ -352,10 +361,10 @@
                             <span>Contact Person</span>
                             <div></div>
                         </div>
-                        <p>{{data.customer.contactFirstName}} {{data.customer.contactLastName}}</p>
+                        <p class="name">{{data.customer.contactFirstName}} {{data.customer.contactLastName}}</p>
                         <div class="col-2">
-                            <span>{{data.customer.contactMobileNumber}}</span>
-                            <span>{{data.pickUpLocation.address}}</span>
+                            <p>{{data.customer.contactMobileNumber}}</p>
+                            <p>{{data.pickUpLocation.address}}</p>
                         </div>
                     </div>
 
@@ -379,7 +388,7 @@
 
                     <div class="content">
                         <div class="id-client">
-                            <p>{{data.receiver.name}}</p>
+                            <h4>{{data.receiver.name}}</h4>
                             <span>{{data.receiver.crNumber}}</span>
                         </div>
                         <p class="email"><svg viewBox="0 0 24 24">
@@ -399,10 +408,10 @@
                             <span>Contact Person</span>
                             <div></div>
                         </div>
-                        <p>{{data.contactPerson.name}}</p>
+                        <p class="name">{{data.contactPerson.name}}</p>
                         <div class="col-2">
-                            <span>{{data.contactPerson.mobileNumber}}</span>
-                            <span>{{data.dropOffLocation.address}}</span>
+                            <p>{{data.contactPerson.mobileNumber}}</p>
+                            <p>{{data.dropOffLocation.address}}</p>
                         </div>
                     </div>
 
@@ -533,6 +542,18 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            console.log("Mobile")
+        } else {
+            console.log("Desktop")
+        }
+
+        console.log(navigator.userAgent)
+    </script>
 </body>
 
 </html>
