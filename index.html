@@ -4,17 +4,17 @@
 <head>
     <style type="text/css">
         :root {
-            --color-1: #fff;
-            --color-2: #000;
-            --color-3: gray;
-            --color-4: rgba(128, 128, 128, 0.1);
-            --color-5: rgb(90, 90, 90);
-            --color-6: rgb(62, 62, 206);
-            --color-7: rgb(255, 99, 64);
+            --bg-1: #fff;
+            --bg-2: rgb(255, 99, 64);
+            --main-text: #000;
+            --secondary-text: gray;
+            --border: rgba(128, 128, 128, 0.1);
+            --link: rgb(62, 62, 206);
+            --color-1: rgb(90, 90, 90);
         }
 
         body {
-            background-color: var(--color-1);
+            background-color: var(--bg-1);
         }
 
         * {
@@ -34,13 +34,13 @@
 
         h4 {
             color: 1.6rem;
-            color: var(--color-3);
+            color: var(--secondary-text);
         }
 
         h3 {
-            background: var(--color-5);
+            background: var(--color-1);
             padding: 1rem;
-            color: var(--color-1);
+            color: var(--bg-1);
             font-size: 1.5rem;
         }
 
@@ -49,24 +49,24 @@
         }
 
         span {
-            color: var(--color-2);
+            color: var(--main-text);
         }
 
         hr {
-            background: var(--color-4);
+            background: var(--border);
             height: .1rem;
             border: none;
-            margin: 1rem 0;
+            margin: .5rem 0;
         }
 
         a {
-            color: var(--color-6);
+            color: var(--link);
             font-size: 1.2rem;
             font-weight: 700;
         }
 
         a[type="email"] {
-            color: var(--color-2);
+            color: var(--main-text);
             font-weight: 400;
         }
 
@@ -86,13 +86,13 @@
         }
 
         .col-2 p {
-            color: var(--color-2);
+            color: var(--main-text);
             font-weight: 700;
             text-transform: capitalize;
         }
 
         .col-2 span {
-            color: var(--color-3);
+            color: var(--secondary-text);
             text-transform: capitalize;
         }
 
@@ -105,22 +105,22 @@
         }
 
         header .img-container img {
-            width: 38mm;
+            /* width: 38mm; */
+            width: 20rem;
             height: 100%;
             padding: 2rem;
-            background-color: #FFF;
-            /* 
-    margin-bottom: -2mm;
-    margin-left: 13mm;
-    margin-top: 1mm; */
+            background-color: var(--bg-1);
+            /* margin-bottom: -2mm;
+            margin-left: 13mm;
+            margin-top: 1mm; */
         }
 
         header .line {
             position: absolute;
             left: 0;
-            top: 3rem;
-            background-color: var(--color-7);
-            height: 2rem;
+            top: 2.5rem;
+            background-color: var(--bg-2);
+            height: 2.5rem;
             width: 100%;
             z-index: -1;
         }
@@ -138,6 +138,21 @@
             margin: 1rem 0;
         }
 
+        .barcode {
+            max-width: 100%;
+            height: 100%;
+            text-align: end;
+        }
+
+        .barcode img {
+            display: inline-block;
+            width: 15rem;
+            height: 5rem;
+            background-color: var(--bg-1);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
 
         .information-container {
             display: flex;
@@ -149,7 +164,7 @@
 
         .information-container .content,
         .information-container .status {
-            border: .1rem solid var(--color-4);
+            border: .1rem solid var(--border);
             padding: 1rem;
         }
 
@@ -166,7 +181,7 @@
         }
 
         .information-container h4 {
-            color: var(--color-2);
+            color: var(--main-text);
             font-size: inherit;
         }
 
@@ -175,8 +190,8 @@
         }
 
         .information-container .contact-hr span {
-            color: var(--color-3);
-            background-color: var(--color-1);
+            color: var(--secondary-text);
+            background-color: var(--bg-1);
             padding-right: .5rem;
             font-size: 1.2rem;
         }
@@ -184,7 +199,7 @@
         .information-container .contact-hr div {
             height: .2rem;
             width: 100%;
-            background-color: var(--color-4);
+            background-color: var(--border);
             position: absolute;
             left: 0;
             top: 50%;
@@ -200,7 +215,7 @@
 
         .information-container .status span,
         .information-container .content span {
-            color: var(--color-3)
+            color: var(--secondary-text)
         }
 
         .driver-endorsement {
@@ -219,7 +234,7 @@
         }
 
         footer {
-            padding-top: 6rem;
+            padding-top: 3rem;
             padding-bottom: 3rem;
         }
 
@@ -230,7 +245,7 @@
         }
 
         .footer-line div {
-            border-top: .5rem solid var(--color-7);
+            border-top: .5rem solid var(--bg-2);
             height: 1rem;
         }
 
@@ -243,7 +258,7 @@
         .footer-line div:nth-child(5) {
             height: 1.55rem;
             width: 99%;
-            background-color: var(--color-1);
+            background-color: var(--bg-1);
             position: absolute;
             top: 15%;
             z-index: 1;
@@ -262,8 +277,8 @@
             height: 125%;
             aspect-ratio: 1/1;
             border-radius: 50%;
-            border: .5rem solid var(--color-7);
-            background-color: var(--color-1);
+            border: .5rem solid var(--bg-2);
+            background-color: var(--bg-1);
             z-index: 1;
         }
     </style>
@@ -297,9 +312,11 @@
                 {{/if}} -->
 
                 <div class="barcode">
-                    <!-- <img src="{{data.requestNumberBarcode}}" width="150mm" height="25mm" style="margin-top: 4.5mm;"> -->
-                    <img src="{{data.requestNumberBarcode}}" alt="Barcode">
-                </div>
+                    <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+                    <img alt='Barcode Generator TEC-IT'
+                        src='https://barcode.tec-it.com/barcode.ashx?data={{data.requestNumberBarcode}}&code=&translate-esc=true&unit=Fit' />
+                        <!-- {{data.requestNumberBarcode}} -->
+                    </div>
 
             </div>
 
