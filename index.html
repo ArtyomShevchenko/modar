@@ -1,531 +1,559 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MADAR Logistics Platform</title>
-        <style>
-            :root {
-                --bg-1: #fff;
-                --bg-2: rgb(255, 99, 64);
-                --main-text: #000;
-                --secondary-text: rgb(180, 180, 185);
-                --border: rgba(128, 128, 128, 0.1);
-                --link: rgb(62, 62, 206);
-                --color-1: rgb(90, 90, 90);
-            }
+  <head>
+    <title>MADAR Logistics Platform</title>
+    <style>
+      :root {
+        --bg-1: #fff;
+        --bg-2: rgb(255, 99, 64);
+        --main-text: #000;
+        --secondary-text: rgb(180, 180, 185);
+        --border: rgba(128, 128, 128, 0.1);
+        --link: rgb(62, 62, 206);
+        --color-1: rgb(90, 90, 90);
+      }
 
-            body {
-                background-color: var(--bg-1);
-            }
+      body {
+        background-color: var(--bg-1);
+      }
 
-            * {
-                font-family: 'Poppins', sans-serif;
-                font-size: 10px;
-                margin: 0;
-                padding: 0;
-                text-decoration: none;
-                box-sizing: border-box;
-            }
+      * {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
 
-            .wrapper {
-                max-width: 21cm;
-                position: relative;
-                margin: 0 auto;
-            }
+      .wrapper {
+        max-width: 21cm;
+        position: relative;
+        margin: 0 auto;
+      }
 
-            h4 {
-                font-size: 1.6rem;
-                color: var(--secondary-text);
-            }
+      h4 {
+        font-size: 1.6rem;
+        color: var(--secondary-text);
+      }
 
-            h3 {
-                background: var(--color-1);
-                padding: 1rem;
-                color: var(--bg-1);
-                font-size: 1.5rem;
-            }
+      h3 {
+        background: var(--color-1);
+        padding: 1rem;
+        color: var(--bg-1);
+        font-size: 1.5rem;
+      }
 
-            h2 {
-                font-size: 1.2rem;
-            }
+      h2 {
+        font-size: 1.2rem;
+      }
 
-            span {
-                color: var(--main-text);
-            }
+      span {
+        color: var(--main-text);
+      }
 
-            hr {
-                background: var(--border);
-                height: .1rem;
-                border: none;
-                margin: .5rem 0;
-            }
+      hr {
+        background: var(--border);
+        height: 0.1rem;
+        border: none;
+        margin: 0.5rem 0;
+      }
 
-            a {
-                color: var(--link);
-                font-size: 1.2rem;
-                font-weight: 700;
-            }
+      a {
+        color: var(--link);
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
 
-            .mailto {
-                color: var(--main-text);
-                font-weight: 400;
-            }
+      .mailto {
+        color: var(--main-text);
+        font-weight: 400;
+      }
 
-            .col-2 {
-                /* columns: 2; */
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: .5rem;
-                padding: 0.5rem 0;
-            }
+      .col-2 {
+        /* columns: 2; */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+      }
 
-            .col-4 {
-                /* columns: 4; */
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1rem;
-            }
+      .col-4 {
+        /* columns: 4; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
 
-            .col-2 p {
-                color: var(--main-text);
-                font-weight: 700;
-                text-transform: capitalize;
-            }
+      .col-2 p {
+        color: var(--main-text);
+        font-weight: 700;
+        text-transform: capitalize;
+      }
 
-            .col-2 span {
-                color: var(--secondary-text);
-                text-transform: capitalize;
-            }
+      .col-2 span {
+        color: var(--secondary-text);
+        text-transform: capitalize;
+      }
 
-            header {
-                margin-top: 2rem;
-                position: relative;
-            }
+      header {
+        margin-top: 2rem;
+        position: relative;
+      }
 
-            header .img-container img {
-                width: 20rem;
-                height: 100%;
-                padding: 2rem;
-                background-color: var(--bg-1);
-            }
+      header .img-container img {
+        width: 20rem;
+        height: 100%;
+        padding: 2rem;
+        background-color: var(--bg-1);
+      }
 
-            header .line {
-                position: absolute;
-                left: 0;
-                top: 2.5rem;
-                background-color: var(--bg-2);
-                height: 2.5rem;
-                width: 100%;
-                z-index: -1;
-            }
+      header .line {
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        background-color: var(--bg-2);
+        height: 2.5rem;
+        width: 100%;
+        z-index: -1;
+      }
 
-            .bar-code-container {
-                display: flex;
-                justify-content: space-between;
-                margin: 1rem 0;
-            }
+      .bar-code-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+      }
 
-            .bar-code-container span {
-                color: var(--secondary-text);
-            }
+      .bar-code-container span {
+        color: var(--secondary-text);
+      }
 
-            .barcode {
-                max-width: 100%;
-                height: 100%;
-                text-align: end;
-            }
+      .barcode {
+        max-width: 100%;
+        height: 100%;
+        text-align: end;
+      }
 
-            .barcode img {
-                display: inline-block;
-                width: 15rem;
-                height: 5rem;
-                background-color: var(--bg-1);
-                font-size: 1.3rem;
-                font-weight: 700;
-            }
+      .barcode img {
+        display: inline-block;
+        width: 15rem;
+        height: 5rem;
+        background-color: var(--bg-1);
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
 
+      .information-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    
+      .information-container .content,
+      .information-container .status {
+          border: 0.1rem solid var(--border);
+          padding: 1rem;
+        }
+        
+        .information-container .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: 100%;
+      }
 
-            .information-container {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                font-size: 1.5rem;
-                font-weight: 700;
-            }
+      .information-container .content .id-client {
+        display: flex;
+        justify-content: space-between;
+        font-size: inherit;
+      }
 
-            .information-container .content,
-            .information-container .status {
-                border: .1rem solid var(--border);
-                padding: 1rem;
-            }
+      .information-container h4 {
+        color: var(--main-text);
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
 
-            .information-container .content {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
+      .information-container p {
+        font-weight: 400;
+      }
 
-            .information-container .content .id-client {
-                display: flex;
-                justify-content: space-between;
-                font-size: inherit;
-            }
+      .information-container .name {
+        font-weight: 700;
+      }
 
-            .information-container h4 {
-                color: var(--main-text);
-                font-size: 1.3rem;
-                font-weight: 700;
-            }
+      .information-container .contact-hr {
+        position: relative;
+      }
 
-            .information-container p {
-                font-weight: 400;
-            }
+      .information-container .contact-hr span {
+        color: var(--secondary-text);
+        background-color: var(--bg-1);
+        padding-right: 0.5rem;
+        font-size: 1.2rem;
+      }
 
-            .information-container .name {
-                font-weight: 700;
-            }
+      .information-container .contact-hr div {
+        height: 0.2rem;
+        width: 100%;
+        background-color: var(--border);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+      }
 
-            .information-container .contact-hr {
-                position: relative;
-            }
+      .information-container .status {
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--border);
+      }
 
-            .information-container .contact-hr span {
-                color: var(--secondary-text);
-                background-color: var(--bg-1);
-                padding-right: .5rem;
-                font-size: 1.2rem;
-            }
+      .information-container .status span,
+      .information-container .content span {
+        color: var(--secondary-text);
+      }
 
-            .information-container .contact-hr div {
-                height: .2rem;
-                width: 100%;
-                background-color: var(--border);
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: -1;
-            }
+      .driver-endorsement {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
 
-            .information-container .status {
-                display: flex;
-                justify-content: space-around;
-                background-color: var(--border);
-            }
+      .driver-endorsement p {
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+      }
 
-            .information-container .status span,
-            .information-container .content span {
-                color: var(--secondary-text)
-            }
+      .driver-endorsement p span {
+        text-transform: uppercase;
+        font-weight: 700;
+      }
 
-            .driver-endorsement {
-                margin-top: 3rem;
-                margin-bottom: 3rem;
-            }
+      footer {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
 
-            .driver-endorsement p {
-                line-height: 1.8rem;
-                font-size: 1.2rem;
-            }
+      .footer-line {
+        position: relative;
+        margin: 0 1rem 2rem 0;
+        padding: 0 1rem;
+      }
 
-            .driver-endorsement p span {
-                text-transform: uppercase;
-                font-weight: 700;
-            }
+      .footer-line div {
+        border-top: 0.5rem solid var(--bg-2);
+        height: 1rem;
+      }
 
-            footer {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-            }
+      .footer-line div:nth-child(2) {
+        margin-left: 1rem;
+        position: relative;
+        z-index: 2;
+      }
 
-            .footer-line {
-                position: relative;
-                margin: 0 1rem 2rem 0;
-                padding: 0 1rem;
-            }
+      .footer-line div:nth-child(5) {
+        height: 1.55rem;
+        width: 99%;
+        background-color: var(--bg-1);
+        position: absolute;
+        top: 15%;
+        z-index: 1;
+        border: none;
+      }
 
-            .footer-line div {
-                border-top: .5rem solid var(--bg-2);
-                height: 1rem;
-            }
+      .footer-line div:nth-child(3) {
+        margin-left: 2rem;
+      }
 
-            .footer-line div:nth-child(2) {
-                margin-left: 1rem;
-                position: relative;
-                z-index: 2;
-            }
+      .footer-line div:nth-child(4) {
+        position: absolute;
+        top: 0;
+        right: -1rem;
+        transform: translateY(-20%);
+        height: 125%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 0.5rem solid var(--bg-2);
+        background-color: var(--bg-1);
+        z-index: 1;
+      }
 
-            .footer-line div:nth-child(5) {
-                height: 1.55rem;
-                width: 99%;
-                background-color: var(--bg-1);
-                position: absolute;
-                top: 15%;
-                z-index: 1;
-                border: none;
-            }
+      svg {
+        height: 1.2rem;
+        fill: var(--color-1);
+        padding-right: 0.5rem;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="img-container wrapper">
+        <img
+          src="https://admin.madar.app/assets/images/madar-logo.svg"
+          alt="madar logo"
+        />
+      </div>
+      <div class="line"></div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="bar-code-container">
+          <!-- {{#if data.assigningDateTz}} -->
+          <p>
+            <span>Assigning Date:</span>{{prettifyDate data.assigningDateTz}}
+          </p>
+          <!-- {{/if}} -->
 
-            .footer-line div:nth-child(3) {
-                margin-left: 2rem;
-            }
-
-            .footer-line div:nth-child(4) {
-                position: absolute;
-                top: 0;
-                right: -1rem;
-                transform: translateY(-20%);
-                height: 125%;
-                aspect-ratio: 1/1;
-                border-radius: 50%;
-                border: .5rem solid var(--bg-2);
-                background-color: var(--bg-1);
-                z-index: 1;
-            }
-
-            svg {
-                height: 1.2rem;
-                fill: var(--color-1);
-                padding-right: .5rem;
-            }
-        </style>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="img-container wrapper">
-                <img src="https://admin.madar.app/assets/images/madar-logo.svg" alt="madar logo">
-            </div>
-            <div class="line"></div>
-        </header>
-        <main>
-            <div class="wrapper">
-                <div class="bar-code-container">
-                    <!-- {{#if data.assigningDateTz}} -->
-                    <p><span>Assigning Date:</span>{{prettifyDate data.assigningDateTz}}</p>
-                    <!-- {{/if}} -->
-
-                    <!-- {{#if data.loadingDateTz}}
+          <!-- {{#if data.loadingDateTz}}
                         <h4>
                             Loading Date: <spa">{{prettifyDate data.loadingDateTz}}</span>
                         </h4>
                     {{/if}} -->
 
-                    <div class="barcode">
-                        <!-- insert your custom barcode setting your data in the GET parameter "data" -->
-                        <img alt='Barcode Generator TEC-IT'
-                            src='https://barcode.tec-it.com/barcode.ashx?data={{data.requestNumberBarcode}}&code=&translate-esc=true&unit=Fit' />
-                        <!-- {{data.requestNumberBarcode}} -->
-                    </div>
+          <div class="barcode">
+            <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+            <img
+              alt="Barcode Generator TEC-IT"
+              src="https://barcode.tec-it.com/barcode.ashx?data={{data.requestNumberBarcode}}&code=&translate-esc=true&unit=Fit"
+            />
+            <!-- {{data.requestNumberBarcode}} -->
+          </div>
+        </div>
 
-                </div>
+        <hr />
 
-                <hr>
+        <div class="col-2">
+          <div class="information-container shipper">
+            <h3>Shipper information</h3>
+            <div class="content">
+              <div class="id-client">
+                <h4>{{data.customer.title}}</h4>
+                <span>{{data.customer.crNumber}}</span>
+              </div>
+              <p class="email">
+                <svg viewBox="0 0 24 24">
+                  <g>
+                    <path
+                      d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z"
+                    />
+                  </g></svg
+                >{{data.customer.email}}
+              </p>
+              <p>
+                <svg viewBox="0 0 395.71 395.71">
+                  <g>
+                    <path
+                      d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"
+                    />
+                  </g>
+                </svg>
+                {{data.pickUpLocation.title}}
+              </p>
+              <div class="contact-hr">
+                <span>Contact Person</span>
+                <div></div>
+              </div>
+              <p class="name">
+                {{data.customer.contactFirstName}}
+                {{data.customer.contactLastName}}
+              </p>
+              <div class="col-2">
+                <p>{{data.customer.contactMobileNumber}}</p>
+                <p>{{data.pickUpLocation.address}}</p>
+              </div>
+            </div>
 
-                <div class="col-2">
-                    <div class="information-container shipper">
-                        <h3>Shipper information</h3>
-                        <div class="content">
-                            <div class="id-client">
-                                <h4>{{data.customer.title}}</h4>
-                                <span>{{data.customer.crNumber}}</span>
-                            </div>
-                            <p class="email"><svg viewBox="0 0 24 24">
-                                    <g>
-                                        <path d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z" />
-                                    </g>
-                                </svg>{{data.customer.email}}</p>
-                            <p> <svg viewBox="0 0 395.71 395.71">
-                                    <g>
-                                        <path
-                                            d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-                                    </g>
-                                </svg>
-                                {{data.pickUpLocation.title}}</p>
-                            <div class="contact-hr">
-                                <span>Contact Person</span>
-                                <div></div>
-                            </div>
-                            <p class="name">{{data.customer.contactFirstName}} {{data.customer.contactLastName}}</p>
-                            <div class="col-2">
-                                <p>{{data.customer.contactMobileNumber}}</p>
-                                <p>{{data.pickUpLocation.address}}</p>
-                            </div>
-                        </div>
+            <div class="status">
+              <span>From</span>
+              <p>{{data.pickUpLocation.city.name}}</p>
+              <span>{{prettifyDate this}}</span>
 
-                        <div class="status">
-                            <span>From</span>
-                            <p>{{data.pickUpLocation.city.name}}</p>
-                            <span>{{prettifyDate this}}</span>
-
-                            <!-- <div>
+              <!-- <div>
                                     {{#data.history}}
                                     {{#isEqualList action 'GOODS_LOADED' createdAt}}
                                     
                                     {{/isEqualList}}
                                     {{/data.history}}
                                 </div> -->
-                        </div>
-                    </div>
+            </div>
+          </div>
 
-                    <div class="information-container receiver">
-                        <h3>Receiver Information</h3>
+          <div class="information-container receiver">
+            <h3>Receiver Information</h3>
 
-                        <div class="content">
-                            <div class="id-client">
-                                <h4>{{data.receiver.name}}</h4>
-                                <span>{{data.receiver.crNumber}}</span>
-                            </div>
-                            <p class="email"><svg viewBox="0 0 24 24">
-                                    <!--  viewBox="0 0 24 24" -->
-                                    <g>
-                                        <path d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z" />
-                                    </g>
-                                </svg>{{data.contactPerson.email}}</p>
-                            <p> <svg viewBox="0 0 395.71 395.71">
-                                    <g>
-                                        <path
-                                            d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-                                    </g>
-                                </svg>
-                                {{data.dropOffLocation.title}}</p>
-                            <div class="contact-hr">
-                                <span>Contact Person</span>
-                                <div></div>
-                            </div>
-                            <p class="name">{{data.contactPerson.name}}</p>
-                            <div class="col-2">
-                                <p>{{data.contactPerson.mobileNumber}}</p>
-                                <p>{{data.dropOffLocation.address}}</p>
-                            </div>
-                        </div>
+            <div class="content">
+              <div class="id-client">
+                <h4>{{data.receiver.name}}</h4>
+                <span>{{data.receiver.crNumber}}</span>
+              </div>
+              <p class="email">
+                <svg viewBox="0 0 24 24">
+                  <!--  viewBox="0 0 24 24" -->
+                  <g>
+                    <path
+                      d="M24,5.7V21H0V5.7l12,10L24,5.7z M12,13l12-9.9V3H0v0.1L12,13z"
+                    />
+                  </g></svg
+                >{{data.contactPerson.email}}
+              </p>
+              <p>
+                <svg viewBox="0 0 395.71 395.71">
+                  <g>
+                    <path
+                      d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"
+                    />
+                  </g>
+                </svg>
+                {{data.dropOffLocation.title}}
+              </p>
+              <div class="contact-hr">
+                <span>Contact Person</span>
+                <div></div>
+              </div>
+              <p class="name">{{data.contactPerson.name}}</p>
+              <div class="col-2">
+                <p>{{data.contactPerson.mobileNumber}}</p>
+                <p>{{data.dropOffLocation.address}}</p>
+              </div>
+            </div>
 
-                        <div class="status">
-                            <span>To</span>
-                            <p>{{data.dropOffLocation.city.name}}</p>
-                            <span>{{prettifyDate this}}</span>
+            <div class="status">
+              <span>To</span>
+              <p>{{data.dropOffLocation.city.name}}</p>
+              <span>{{prettifyDate this}}</span>
 
-                            <!-- <div>
+              <!-- <div>
                                     {{#data.history}}
                                     {{#isEqualList action 'GOODS_DELIVERED' createdAt}}
                                     {{/isEqualList}}
                                     {{/data.history}}
                                 </div> -->
-                        </div>
-                    </div>
-                </div>
+            </div>
+          </div>
+        </div>
 
-                <hr>
+        <hr />
 
-                <div class="ship-info">
-                    <h3>Shipment information</h3>
-                    <div class="col-2">
-                        <div class="col-2">
-                            <span>Product Type:</span>
-                            <p>{{data.productType.name}}</p>
-                        </div>
+        <div class="ship-info">
+          <h3>Shipment information</h3>
+          <div class="col-2">
+            <div class="col-2">
+              <span>Product Type:</span>
+              <p>{{data.productType.name}}</p>
+            </div>
 
-                        <div class="col-2">
-                            <span>Description:</span>
-                            <p>{{data.notes}}</p>
-                        </div>
+            <div class="col-2">
+              <span>Description:</span>
+              <p>{{data.notes}}</p>
+            </div>
 
-                        <div class="col-2">
-                            <span>Required truck:</span>
-                            <p>{{data.truckType.name}}</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-2">
+              <span>Required truck:</span>
+              <p>{{data.truckType.name}}</p>
+            </div>
+          </div>
+        </div>
 
-                <hr>
+        <hr />
 
-                <div class="transp-info">
-                    <h3>Transporter information</h3>
-                    <div class="col-2">
-                        <div>
-                            <h4>Truck Info</h4>
-                            <div class="col-2">
-                                <span>Plate Number:</span>
-                                <p>{{data.truck.plateNumber}}</p>
-                            </div>
-                            <div class="col-2">
-                                <span>Truck Type:</span>
-                                <p>{{data.truck.type.name}}</p>
-                            </div>
-                            <!-- <div class="col-2">
+        <div class="transp-info">
+          <h3>Transporter information</h3>
+          <div class="col-2">
+            <div>
+              <h4>Truck Info</h4>
+              <div class="col-2">
+                <span>Plate Number:</span>
+                <p>{{data.truck.plateNumber}}</p>
+              </div>
+              <div class="col-2">
+                <span>Truck Type:</span>
+                <p>{{data.truck.type.name}}</p>
+              </div>
+              <!-- <div class="col-2">
                                 <p>Truck Serial Number:</p>
                                 <p>{{data.truck.sequenceNumber}}</p>
                             </div> -->
-                        </div>
-
-
-                        <div>
-                            <h4>Driver Info</h4>
-                            <div class="col-2">
-                                <span>Driver Name:</span>
-                                <p>{{data.driver.user.firstName}} {{data.driver.user.lastName}}</p>
-                            </div>
-                            <div class="col-2">
-                                <span>Iqama/National ID:</span>
-                                <p>{{data.driver.iqamaId}}</p>
-                            </div>
-                            <div class="col-2">
-                                <span>Nationality:</span>
-                                <p>{{data.driver.nationality}}</p>
-                            </div>
-                            <div class="col-2">
-                                <span>Mobile Number:</span>
-                                <p>{{data.driver.user.mobileNumber}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="driver-endorsement">
-                    <p>
-                        I, <span>{{data.driver.user.firstName}}</span> <span>{{data.driver.user.lastName}}</span>, the
-                        driver of the car whose numbers are
-                        mentioned above, undertake and commit myself to
-                        be personally responsible for the goods loaded upon receiving them, intact and complete in number
-                        and
-                        quality,
-                        in order to deliver them to their destination without delay, and that I bear the consequences of the
-                        goods in
-                        terms of fines and expenses for damage, shortage or delay resulting from my negligence as I commit
-                        to
-                        setting
-                        sail And store the goods and notify the Foundation's office in the event of any emergency during the
-                        same day.
-                    </p>
-                </div>
             </div>
-        </main>
-        <footer>
-            <div class="wrapper">
-                <div class="footer-line">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
 
-                <h2>Madar Digital Logistics Solution Co.</h2>
-                <a href="https://www.madar.app/" target="_blank">www.madar.app</a>
-
-                <div class="col-4">
-                    <div>
-                        <a class="mailto" href="mailto:customerservice@madar.app">CustomerService@madar.app</a>
-                        <p>Kingdom of Saudi Arabia,<br> P.O. Box 1087, Riyadh 11431</p>
-                    </div>
-                    <p>VAT: 310573362100003 </p>
-                    <p>Tel: 920002341 - 5555</p>
-                    <p>CR : 1010586820</p>
-                </div>
+            <div>
+              <h4>Driver Info</h4>
+              <div class="col-2">
+                <span>Driver Name:</span>
+                <p>
+                  {{data.driver.user.firstName}} {{data.driver.user.lastName}}
+                </p>
+              </div>
+              <div class="col-2">
+                <span>Iqama/National ID:</span>
+                <p>{{data.driver.iqamaId}}</p>
+              </div>
+              <div class="col-2">
+                <span>Nationality:</span>
+                <p>{{data.driver.nationality}}</p>
+              </div>
+              <div class="col-2">
+                <span>Mobile Number:</span>
+                <p>{{data.driver.user.mobileNumber}}</p>
+              </div>
             </div>
-        </footer>
-    </body>
+          </div>
+        </div>
 
+        <hr />
+
+        <div class="driver-endorsement">
+          <p>
+            I, <span>{{data.driver.user.firstName}}</span>
+            <span>{{data.driver.user.lastName}}</span>, the driver of the car
+            whose numbers are mentioned above, undertake and commit myself to be
+            personally responsible for the goods loaded upon receiving them,
+            intact and complete in number and quality, in order to deliver them
+            to their destination without delay, and that I bear the consequences
+            of the goods in terms of fines and expenses for damage, shortage or
+            delay resulting from my negligence as I commit to setting sail And
+            store the goods and notify the Foundation's office in the event of
+            any emergency during the same day.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="footer-line">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <h2>Madar Digital Logistics Solution Co.</h2>
+        <a href="https://www.madar.app/" target="_blank">www.madar.app</a>
+
+        <div class="col-4">
+          <div>
+            <a class="mailto" href="mailto:customerservice@madar.app"
+              >CustomerService@madar.app</a
+            >
+            <p>
+              Kingdom of Saudi Arabia,<br />
+              P.O. Box 1087, Riyadh 11431
+            </p>
+          </div>
+          <p>VAT: 310573362100003</p>
+          <p>Tel: 920002341 - 5555</p>
+          <p>CR : 1010586820</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
